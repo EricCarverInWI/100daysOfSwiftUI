@@ -1,0 +1,33 @@
+Day 08 Checkpoint4
+
+import Cocoa
+
+enum InputError: Error{
+    case toosmall, toobig, nosqrt
+}
+
+func checkInput(_ input: Int) throws -> String {
+    if input < 1 {throw InputError.toosmall}
+    if input > 10000 {throw InputError.toobig}
+    
+    for i in 1...100{
+        if (i*i==input){
+            return("The SQRT of \(input) is \(i)")
+        }
+    }
+    throw InputError.nosqrt
+}
+
+let input = 400
+
+do {
+    print( try checkInput(input ))
+} catch InputError.toosmall{
+    print("Please keep it greater than 0")
+} catch InputError.toobig {
+    print("please keep it under 10000")
+} catch InputError.nosqrt {
+    print("there is no natural INT SQRT for \(input)")
+} catch {
+    print("there was an unnown unexplained error")
+}
