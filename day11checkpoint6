@@ -1,0 +1,50 @@
+import Cocoa
+
+//cars model
+//number of seats
+//current gear
+
+struct Car {
+    let model:String
+    let seatsQty: Int
+    var gearCurrent: Int
+    let gearLowest = 0
+    let gearHighest = 9
+    
+    mutating func gearUpshift(){
+        if gearCurrent < gearHighest {
+            gearCurrent+=1
+            print("You've now upshifted to gear \(gearCurrent)!")
+        } else {
+            print("Dang Bro, you're already at MAXIMUM GEAR, be careful out there")
+        }
+    }
+    
+    mutating func gearDownshift (){
+        if gearCurrent > gearLowest {
+            gearCurrent-=1
+            print("Your now downshifted to \(gearCurrent) gear.")
+        } else {
+            print("Youre already in Neutral bro, you trying to get to reverse??")
+        }
+    }
+}
+
+var car = Car(model:"camry", seatsQty: 5, gearCurrent: 4)
+car.gearUpshift()
+car.gearUpshift()
+car.gearUpshift()
+car.gearUpshift()
+car.gearUpshift()
+car.gearUpshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
+car.gearDownshift()
