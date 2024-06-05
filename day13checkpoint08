@@ -1,0 +1,32 @@
+protocol Building {
+    var rooms: Int {get set}
+    var cost: Int {get set}
+    var salesAgent: String {get set}
+    var name: String{get}
+    func salesSummary()
+}
+
+extension Building {
+    func salesSummary(){
+        print ("Sales Summary for the \(name), cost was \(cost), bedrooms: \(rooms).  Contact the sales agent: \(salesAgent)")
+    }
+}
+
+struct House: Building{
+    var name: String
+    var rooms: Int
+    var cost: Int
+    var salesAgent: String
+}
+
+struct Office: Building{
+    var name: String
+    var rooms: Int
+    var cost: Int
+    var salesAgent: String
+}
+
+let office = Office(name: "Super Office", rooms: 4, cost: 200000, salesAgent: "George")
+let house = House(name: "suCASA", rooms: 3, cost: 500000, salesAgent: "Jimmy")
+office.salesSummary()
+house.salesSummary()
